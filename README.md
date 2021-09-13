@@ -90,6 +90,8 @@ export const checkLogin = (target: LoginInformation):Array<ValidationResult> => 
 ```
 
 こんな感じ。ポイントは処理も返却値もUIに依存させないこと。`checkLogin` が入力チェック処理で、エラーが発生している場所とエラーメッセージを配列で返してあげている
+
+
 例えば
 ```js
 checkLogin({
@@ -106,7 +108,7 @@ checkLogin({
     message: 'Email Addressは入力必須項目です'
   },{
     target: 'password',
-    message: 'Passwordは入力必須項目です'
+    message: 'Passwordは8文字以上である必要があります'
   }
 ]
 ````
