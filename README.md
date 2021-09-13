@@ -64,6 +64,12 @@ lernaでのmonorepoな構成
 
 ```js
 
+export default interface LoginInformation {
+    name?: string,
+    email?: string,
+    password?: string
+}
+
 export interface ValidationResult {
     target: string
     message: string
