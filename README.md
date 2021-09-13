@@ -89,7 +89,7 @@ export const checkLogin = (target: LoginInformation):Array<ValidationResult> => 
 }
 ```
 
-こんな感じ。ポイントはUIに依存させないこと。`checkLogin` が入力チェック処理で、エラーが発生している場所とエラーメッセージを配列で返してあげている
+こんな感じ。ポイントは処理も返却値もUIに依存させないこと。`checkLogin` が入力チェック処理で、エラーが発生している場所とエラーメッセージを配列で返してあげている
 例えば
 ```js
 checkLogin({
