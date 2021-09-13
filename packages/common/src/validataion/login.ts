@@ -33,7 +33,7 @@ export const checkLogin = (target: LoginInformation):Array<ValidationResult> => 
     }
 
     // 列の長さチェック
-    if(target.password && target.password.length >= 8){
+    if(target.password && target.password.length < 8){
         result.push({
             target: "password",
             message: ValidationMessage.password('Password')
