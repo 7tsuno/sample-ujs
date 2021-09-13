@@ -62,20 +62,20 @@ lernaでのmonorepoな構成
 
 ### 入力チェック処理
 
-```js
+```ts
 
-export default interface LoginInformation {
+interface LoginInformation {
     name?: string,
     email?: string,
     password?: string
 }
 
-export interface ValidationResult {
+interface ValidationResult {
     target: string
     message: string
 }
 
-export const ValidationMessage = {
+const ValidationMessage = {
     required: (name:string) => `${name}は入力必須項目です`,
     email: (name:string) => `${name}はemail形式である必要があります`,
     password: (name:string) => `${name}は8文字以上である必要があります`,
@@ -129,7 +129,7 @@ export const checkLogin = (target: LoginInformation):Array<ValidationResult> => 
 
 
 例えば
-```js
+```ts
 checkLogin({
   name: 'tanaka',
   email: '',
@@ -137,7 +137,7 @@ checkLogin({
 })
 ```
 というように呼ばれると返却値は
-```js
+```ts
 [
   {
     target: 'email',
@@ -154,7 +154,7 @@ checkLogin({
 ### フロントの実装
 
 フロント側の実装は
-```js
+```ts
   // フォームの内容
   const [name, setName] = useState<string>('')
   const [email, setEmail] = useState<string>('')
