@@ -1,0 +1,23 @@
+{
+  "name": "common",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "nakayama.toshiharu@opst.jp <nakayama.toshiharu@opst.jp>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/common.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "typescript": "^4.4.3"
+  }
+}
