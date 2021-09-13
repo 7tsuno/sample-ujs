@@ -1,13 +1,37 @@
 # lernaでUniversal JSを試してみる
 
-入力チェックを共通化してみる
-
-`packages/common` に共通処理として入力チェックを置き、それを
-`packages/web-front` のReactから呼び出しているサンプル
-
 [動作サンプル](https://sample-ujs.vercel.app/)
-
 ![image.png](https://chaneso-crowi.s3.amazonaws.com/attachment/613ac4535017d000470e3f16/a54aeba5b476346e266a44318be2b169.png)
+
+## プロジェクトの動かし方
+
+npm install
+```
+npm i
+```
+
+lerna install (各パッケージへの `npm i` 的なもの)
+```
+npx lerna bootstrap
+```
+
+lernaでビルド
+```
+npx lerna build
+```
+
+reactをlocalhost:3000で起動
+```
+lerna run --scope web-front start
+```
+
+## 以降つくったものの解説など
+
+### 目的
+
+共通的に使える入力チェック処理を作成し、実際に動くサンプルに組み込む
+
+### 作ったもの
 
 よくあるサインアップ画面
 
@@ -28,7 +52,11 @@
              └── App.tsx (ReactのTSX)
 ```
 
-packages配下にそれぞれプロジェクトを配置した。
+`packages/common` に共通処理として入力チェックを置き、それを
+`packages/web-front` のReactから呼び出している
+
+lernaでのmonorepoな構成
+
 
 ### 入力チェック処理
 
